@@ -39,6 +39,19 @@
     .hb-jump a:hover { background: #fff; }
     .hb-note { font-style: italic; font-size: 15px; opacity: .8; margin-top: 10px; }
     .hb-stat { font-size: 40px; font-weight: 700; line-height: 1; margin-bottom: 8px; }
+    .pg-impact { padding: 50px 0 20px; }
+    .pg-stat__num { font-size: 42px; font-weight: 800; color: #008000; line-height: 1.1; }
+    .pg-stat__label { font-size: 16px; font-weight: 600; opacity: .75; }
+    .pg-title { font-size: 32px !important; line-height: 1.25 !important; }
+    .pg-outcomes li { font-weight: 600; }
+    .pg-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .pg-gallery__item { display: block; border-radius: 10px; overflow: hidden; aspect-ratio: 4 / 3; background: #e9e9ef; }
+    .pg-gallery__item img { width: 100%; height: 100%; object-fit: cover; transition: transform .3s; }
+    .pg-gallery__item:hover img { transform: scale(1.05); }
+    .pg-gallery__more { display: inline-block; margin-top: 14px; font-weight: 700; color: #008000; }
+    .pg-quote { font-size: 26px; font-style: italic; font-weight: 600; max-width: 760px; margin: 0 auto 8px; }
+    .pg-gallery--4 { grid-template-columns: repeat(4, 1fr); }
+    @media (max-width: 575px) { .pg-gallery, .pg-gallery--4 { grid-template-columns: repeat(2, 1fr); gap: 8px; } .pg-stat__num { font-size: 32px; } }
   </style>
 </head>
 
@@ -126,7 +139,7 @@
         <div class="row justify-content-center">
           <div class="col-xl-7">
             <h2 class="page-title-content__heading">Programmes &amp; Events</h2>
-            <p class="page-title-content__text">How YNAN brings neuroscience to young people across Nigeria, through national programmes and chapter activities.</p>
+            <p class="page-title-content__text">Since 2019, YNAN has brought neuroscience to young people across Nigeria and beyond through outreach, mentorship, hands-on training, competitions and international collaboration.</p>
           </div>
         </div>
       </div>
@@ -135,59 +148,336 @@
       </div>
     </div>
     <!--/ .Page Title Area -->
-    <div class="hb-section bg-default">
+    <!-- Impact Area -->
+    <div class="pg-impact bg-default">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-3 col-6 mb-4 text-center"><div class="pg-stat"><div class="pg-stat__num">10,000+</div><div class="pg-stat__label">People reached</div></div></div>
+          <div class="col-lg-3 col-6 mb-4 text-center"><div class="pg-stat"><div class="pg-stat__num">2,000+</div><div class="pg-stat__label">Community members</div></div></div>
+          <div class="col-lg-3 col-6 mb-4 text-center"><div class="pg-stat"><div class="pg-stat__num">20+</div><div class="pg-stat__label">University chapters</div></div></div>
+          <div class="col-lg-3 col-6 mb-4 text-center"><div class="pg-stat"><div class="pg-stat__num">5,000+</div><div class="pg-stat__label">Students in NeuroClubs</div></div></div>
+        </div>
+      </div>
+    </div>
+    <!--/ .Impact Area -->
+
+    <!-- NeuroClub Initiative -->
+    <div class="hb-section bg-default-3" id="neuroclub">
       <div class="container">
         <div class="row">
-          <div class="col-lg-4 col-md-6 mb-4"><div class="hb-card h-100">
-            <i class="fas fa-brain text-primary" style="font-size:28px;margin-bottom:14px;"></i>
-            <h4 class="hb-card__title">Brain Awareness Week</h4>
-            <p>Joining the global campaign each year with school outreaches, seminars and public talks on brain and mental health.</p>
-          </div></div>
-          <div class="col-lg-4 col-md-6 mb-4"><div class="hb-card h-100">
-            <i class="fas fa-trophy text-primary" style="font-size:28px;margin-bottom:14px;"></i>
-            <h4 class="hb-card__title">Brain Bee</h4>
-            <p>Preparing high school students for the annual Brain Bee competition and eligibility for international rounds.</p>
-          </div></div>
-          <div class="col-lg-4 col-md-6 mb-4"><div class="hb-card h-100">
-            <i class="fas fa-laptop text-primary" style="font-size:28px;margin-bottom:14px;"></i>
-            <h4 class="hb-card__title">Monthly Online Workshops</h4>
-            <p>Regular virtual workshops open to all members across chapters.</p>
-          </div></div>
-          <div class="col-lg-4 col-md-6 mb-4"><div class="hb-card h-100">
-            <i class="fas fa-chalkboard-teacher text-primary" style="font-size:28px;margin-bottom:14px;"></i>
-            <h4 class="hb-card__title">Lecture Series &amp; Webinars</h4>
-            <p>Talks from neuroscientists and neuro-practitioners, plus online courses for members.</p>
-          </div></div>
-          <div class="col-lg-4 col-md-6 mb-4"><div class="hb-card h-100">
-            <i class="fas fa-book-open text-primary" style="font-size:28px;margin-bottom:14px;"></i>
-            <h4 class="hb-card__title">Journal Club</h4>
-            <p>Reading and discussing neuroscience research in an informal setting, without the pressure of being graded.</p>
-          </div></div>
-          <div class="col-lg-4 col-md-6 mb-4"><div class="hb-card h-100">
-            <i class="fas fa-school text-primary" style="font-size:28px;margin-bottom:14px;"></i>
-            <h4 class="hb-card__title">NeuroSchool &amp; NeuroClubs</h4>
-            <p>Bringing neuroscience to primary and high school students through NeuroSchool and school NeuroClubs.</p>
-          </div></div>
-          <div class="col-lg-4 col-md-6 mb-4"><div class="hb-card h-100">
-            <i class="fas fa-hands-helping text-primary" style="font-size:28px;margin-bottom:14px;"></i>
-            <h4 class="hb-card__title">Community Outreach</h4>
-            <p>Raising awareness of neurological conditions and how to deal with them.</p>
-          </div></div>
-          <div class="col-lg-4 col-md-6 mb-4"><div class="hb-card h-100">
-            <i class="fas fa-microphone text-primary" style="font-size:28px;margin-bottom:14px;"></i>
-            <h4 class="hb-card__title">Conferences &amp; Publications</h4>
-            <p>Support to present papers at local and international conferences (e.g. NSN) and publish review articles, with travel grants for outstanding members.</p>
-          </div></div>
-          <div class="col-lg-4 col-md-6 mb-4"><div class="hb-card h-100">
-            <i class="fas fa-award text-primary" style="font-size:28px;margin-bottom:14px;"></i>
-            <h4 class="hb-card__title">Awards</h4>
-            <p>ECO awards for outstanding students and the Outstanding Member Award for exceptionally active members.</p>
-          </div></div>
+          <div class="col-lg-4 mb-4">
+            <div class="section-title section-title--l3">
+              <h6 class="section-title__sub-heading"><i class="fas fa-school me-2"></i>Primary &amp; secondary schools</h6>
+              <h2 class="section-title__heading pg-title">NeuroClub Initiative</h2>
+              <p class="section-title__description">We developed age-appropriate neuroscience curricula for primary and secondary schools and deliver them through interactive workshops, storytelling and Brain Bee preparation.</p>
+              <ul class="hb-list pg-outcomes">
+                  <li>5,000+ students engaged</li>
+                  <li>Growing interest in STEM pathways</li>
+                  <li>A scalable early pipeline for neuroscience education</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="pg-gallery">
+              <a class="pg-gallery__item" href="image/ynan/full/neuroclub-01.jpg" data-fancybox="neuroclub" data-caption="NeuroClub activity in a school"><img src="image/ynan/thumb/neuroclub-01.jpg" alt="NeuroClub activity in a school" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item" href="image/ynan/full/neuroclub-02.jpg" data-fancybox="neuroclub" data-caption="NeuroClub activity in a school"><img src="image/ynan/thumb/neuroclub-02.jpg" alt="NeuroClub activity in a school" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item" href="image/ynan/full/neuroclub-03.jpg" data-fancybox="neuroclub" data-caption="NeuroClub activity in a school"><img src="image/ynan/thumb/neuroclub-03.jpg" alt="NeuroClub activity in a school" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item" href="image/ynan/full/neuroclub-04.jpg" data-fancybox="neuroclub" data-caption="NeuroClub activity in a school"><img src="image/ynan/thumb/neuroclub-04.jpg" alt="NeuroClub activity in a school" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item" href="image/ynan/full/neuroclub-05.jpg" data-fancybox="neuroclub" data-caption="NeuroClub activity in a school"><img src="image/ynan/thumb/neuroclub-05.jpg" alt="NeuroClub activity in a school" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item" href="image/ynan/full/neuroclub-06.jpg" data-fancybox="neuroclub" data-caption="NeuroClub activity in a school"><img src="image/ynan/thumb/neuroclub-06.jpg" alt="NeuroClub activity in a school" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item d-none" href="image/ynan/full/neuroclub-07.jpg" data-fancybox="neuroclub" data-caption="NeuroClub activity in a school"><img src="image/ynan/thumb/neuroclub-07.jpg" alt="NeuroClub activity in a school" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item d-none" href="image/ynan/full/neuroclub-08.jpg" data-fancybox="neuroclub" data-caption="NeuroClub activity in a school"><img src="image/ynan/thumb/neuroclub-08.jpg" alt="NeuroClub activity in a school" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item d-none" href="image/ynan/full/neuroclub-09.jpg" data-fancybox="neuroclub" data-caption="NeuroClub activity in a school"><img src="image/ynan/thumb/neuroclub-09.jpg" alt="NeuroClub activity in a school" loading="lazy" decoding="async" width="480" height="360"></a>
+            </div>
+            <a class="pg-gallery__more" href="image/ynan/full/neuroclub-01.jpg" data-fancybox-trigger="neuroclub">View all 9 photos</a>
+          </div>
         </div>
-        <div class="text-center mt-4">
-          <p>Chapters also run their own yearly projects alongside these national programmes.</p>
-          <a class="btn btn-primary text-white rounded-50 mt-3" href="handbook.html#chapters">Start or join a chapter</a>
+      </div>
+    </div>
+
+    <!-- Brain Awareness &amp; Community Outreach -->
+    <div class="hb-section bg-default" id="outreach">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <div class="section-title section-title--l3">
+              <h6 class="section-title__sub-heading"><i class="fas fa-brain me-2"></i>Brain Awareness Week and beyond</h6>
+              <h2 class="section-title__heading pg-title">Brain Awareness &amp; Community Outreach</h2>
+              <p class="section-title__description">Nationwide Brain Awareness campaigns, seminars and community programmes on brain and mental health, run by our national team and chapters.</p>
+              <ul class="hb-list pg-outcomes">
+                  <li>5,000+ participants reached</li>
+                  <li>Better public understanding of brain health and less stigma</li>
+                  <li>Stronger community-level neuroscience literacy</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="pg-gallery">
+              <a class="pg-gallery__item" href="image/ynan/full/outreach-01.jpg" data-fancybox="outreach" data-caption="Brain Awareness and community outreach"><img src="image/ynan/thumb/outreach-01.jpg" alt="Brain Awareness and community outreach" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item" href="image/ynan/full/outreach-02.jpg" data-fancybox="outreach" data-caption="Brain Awareness and community outreach"><img src="image/ynan/thumb/outreach-02.jpg" alt="Brain Awareness and community outreach" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item" href="image/ynan/full/outreach-03.jpg" data-fancybox="outreach" data-caption="Brain Awareness and community outreach"><img src="image/ynan/thumb/outreach-03.jpg" alt="Brain Awareness and community outreach" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item" href="image/ynan/full/outreach-04.jpg" data-fancybox="outreach" data-caption="Brain Awareness and community outreach"><img src="image/ynan/thumb/outreach-04.jpg" alt="Brain Awareness and community outreach" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item" href="image/ynan/full/outreach-05.jpg" data-fancybox="outreach" data-caption="Brain Awareness and community outreach"><img src="image/ynan/thumb/outreach-05.jpg" alt="Brain Awareness and community outreach" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item" href="image/ynan/full/outreach-06.jpg" data-fancybox="outreach" data-caption="Brain Awareness and community outreach"><img src="image/ynan/thumb/outreach-06.jpg" alt="Brain Awareness and community outreach" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item d-none" href="image/ynan/full/outreach-07.jpg" data-fancybox="outreach" data-caption="Brain Awareness and community outreach"><img src="image/ynan/thumb/outreach-07.jpg" alt="Brain Awareness and community outreach" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item d-none" href="image/ynan/full/outreach-08.jpg" data-fancybox="outreach" data-caption="Brain Awareness and community outreach"><img src="image/ynan/thumb/outreach-08.jpg" alt="Brain Awareness and community outreach" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item d-none" href="image/ynan/full/outreach-09.jpg" data-fancybox="outreach" data-caption="Brain Awareness and community outreach"><img src="image/ynan/thumb/outreach-09.jpg" alt="Brain Awareness and community outreach" loading="lazy" decoding="async" width="480" height="360"></a>
+            </div>
+            <a class="pg-gallery__more" href="image/ynan/full/outreach-01.jpg" data-fancybox-trigger="outreach">View all 9 photos</a>
+          </div>
         </div>
+      </div>
+    </div>
+
+    <!-- YNAN Journal Club &amp; Webinars -->
+    <div class="hb-section bg-default-3" id="journal-club">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <div class="section-title section-title--l3">
+              <h6 class="section-title__sub-heading"><i class="fas fa-book-open me-2"></i>Research and scientific communication</h6>
+              <h2 class="section-title__heading pg-title">YNAN Journal Club &amp; Webinars</h2>
+              <p class="section-title__description">Students critically review scientific literature and train in scientific writing and presentation, supported by webinars on publishing and neuroethics.</p>
+              <ul class="hb-list pg-outcomes">
+                  <li>Student co-authorship on publications</li>
+                  <li>More students presenting at conferences</li>
+                  <li>Research capacity and communication skills</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="pg-gallery">
+              <a class="pg-gallery__item" href="image/ynan/full/journal-club-01.jpg" data-fancybox="journal-club" data-caption="YNAN journal club and webinar"><img src="image/ynan/thumb/journal-club-01.jpg" alt="YNAN journal club and webinar" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item" href="image/ynan/full/journal-club-02.jpg" data-fancybox="journal-club" data-caption="YNAN journal club and webinar"><img src="image/ynan/thumb/journal-club-02.jpg" alt="YNAN journal club and webinar" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item" href="image/ynan/full/journal-club-03.jpg" data-fancybox="journal-club" data-caption="YNAN journal club and webinar"><img src="image/ynan/thumb/journal-club-03.jpg" alt="YNAN journal club and webinar" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item" href="image/ynan/full/journal-club-04.jpg" data-fancybox="journal-club" data-caption="YNAN journal club and webinar"><img src="image/ynan/thumb/journal-club-04.jpg" alt="YNAN journal club and webinar" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item" href="image/ynan/full/journal-club-05.jpg" data-fancybox="journal-club" data-caption="YNAN journal club and webinar"><img src="image/ynan/thumb/journal-club-05.jpg" alt="YNAN journal club and webinar" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item" href="image/ynan/full/journal-club-06.jpg" data-fancybox="journal-club" data-caption="YNAN journal club and webinar"><img src="image/ynan/thumb/journal-club-06.jpg" alt="YNAN journal club and webinar" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item d-none" href="image/ynan/full/journal-club-07.jpg" data-fancybox="journal-club" data-caption="YNAN journal club and webinar"><img src="image/ynan/thumb/journal-club-07.jpg" alt="YNAN journal club and webinar" loading="lazy" decoding="async" width="480" height="360"></a>
+            </div>
+            <a class="pg-gallery__more" href="image/ynan/full/journal-club-01.jpg" data-fancybox-trigger="journal-club">View all 7 photos</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NeuroNational Quiz &amp; ECO Awards -->
+    <div class="hb-section bg-default" id="eco-awards">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <div class="section-title section-title--l3">
+              <h6 class="section-title__sub-heading"><i class="fas fa-trophy me-2"></i>Espiria Chinna Outstanding (ECO) Awards</h6>
+              <h2 class="section-title__heading pg-title">NeuroNational Quiz &amp; ECO Awards</h2>
+              <p class="section-title__description">National neuroscience quiz competitions across universities, with the ECO Awards recognising outstanding students.</p>
+              <ul class="hb-list pg-outcomes">
+                  <li>15+ universities competing</li>
+                  <li>20+ outstanding students recognised</li>
+                  <li>Many awardees advancing to graduate study in Nigeria and abroad</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="pg-gallery">
+              <a class="pg-gallery__item" href="image/ynan/full/eco-awards-01.jpg" data-fancybox="eco-awards" data-caption="NeuroNational Quiz and ECO Awards"><img src="image/ynan/thumb/eco-awards-01.jpg" alt="NeuroNational Quiz and ECO Awards" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item" href="image/ynan/full/eco-awards-02.jpg" data-fancybox="eco-awards" data-caption="NeuroNational Quiz and ECO Awards"><img src="image/ynan/thumb/eco-awards-02.jpg" alt="NeuroNational Quiz and ECO Awards" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item" href="image/ynan/full/eco-awards-03.jpg" data-fancybox="eco-awards" data-caption="NeuroNational Quiz and ECO Awards"><img src="image/ynan/thumb/eco-awards-03.jpg" alt="NeuroNational Quiz and ECO Awards" loading="lazy" decoding="async" width="480" height="360"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Brain Bee Programme -->
+    <div class="hb-section bg-default-3" id="brain-bee">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <div class="section-title section-title--l3">
+              <h6 class="section-title__sub-heading"><i class="fas fa-medal me-2"></i>Neuroscience competitions for high school students</h6>
+              <h2 class="section-title__heading pg-title">Brain Bee Programme</h2>
+              <p class="section-title__description">We organise and mentor high school students for Brain Bee neuroscience competitions, including Nigeria's first national Brain Bee.</p>
+              <ul class="hb-list pg-outcomes">
+                  <li>Hundreds of students inspired toward neuroscience careers</li>
+                  <li>Participants progressing into YNAN leadership roles</li>
+                  <li>Early talent identification and development</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="pg-gallery">
+              <a class="pg-gallery__item" href="image/ynan/full/brain-bee-01.jpg" data-fancybox="brain-bee" data-caption="Brain Bee competition"><img src="image/ynan/thumb/brain-bee-01.jpg" alt="Brain Bee competition" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item" href="image/ynan/full/brain-bee-02.jpg" data-fancybox="brain-bee" data-caption="Brain Bee competition"><img src="image/ynan/thumb/brain-bee-02.jpg" alt="Brain Bee competition" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item" href="image/ynan/full/brain-bee-03.jpg" data-fancybox="brain-bee" data-caption="Brain Bee competition"><img src="image/ynan/thumb/brain-bee-03.jpg" alt="Brain Bee competition" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item" href="image/ynan/full/brain-bee-04.jpg" data-fancybox="brain-bee" data-caption="Brain Bee competition"><img src="image/ynan/thumb/brain-bee-04.jpg" alt="Brain Bee competition" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item" href="image/ynan/full/brain-bee-05.jpg" data-fancybox="brain-bee" data-caption="Brain Bee competition"><img src="image/ynan/thumb/brain-bee-05.jpg" alt="Brain Bee competition" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item" href="image/ynan/full/brain-bee-06.jpg" data-fancybox="brain-bee" data-caption="Brain Bee competition"><img src="image/ynan/thumb/brain-bee-06.jpg" alt="Brain Bee competition" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item d-none" href="image/ynan/full/brain-bee-07.jpg" data-fancybox="brain-bee" data-caption="Brain Bee competition"><img src="image/ynan/thumb/brain-bee-07.jpg" alt="Brain Bee competition" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item d-none" href="image/ynan/full/brain-bee-08.jpg" data-fancybox="brain-bee" data-caption="Brain Bee competition"><img src="image/ynan/thumb/brain-bee-08.jpg" alt="Brain Bee competition" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item d-none" href="image/ynan/full/brain-bee-09.jpg" data-fancybox="brain-bee" data-caption="Brain Bee competition"><img src="image/ynan/thumb/brain-bee-09.jpg" alt="Brain Bee competition" loading="lazy" decoding="async" width="480" height="360"></a>
+            </div>
+            <a class="pg-gallery__more" href="image/ynan/full/brain-bee-01.jpg" data-fancybox-trigger="brain-bee">View all 9 photos</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- International Neuronexus Symposium &amp; Proposal Award -->
+    <div class="hb-section bg-default" id="neuronexus">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <div class="section-title section-title--l3">
+              <h6 class="section-title__sub-heading"><i class="fas fa-lightbulb me-2"></i>Early-stage research for undergraduates</h6>
+              <h2 class="section-title__heading pg-title">International Neuronexus Symposium &amp; Proposal Award</h2>
+              <p class="section-title__description">Nigerian and international students are trained in research proposal development, peer review and scientific presentation, and present their ideas to a global audience.</p>
+              <ul class="hb-list pg-outcomes">
+                  <li>Outstanding proposals recognised with awards</li>
+                  <li>Finalists from Nigeria, Tanzania and India</li>
+                  <li>Young neuroscientists ready for global engagement</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="pg-gallery">
+              <a class="pg-gallery__item" href="image/ynan/full/neuronexus-01.jpg" data-fancybox="neuronexus" data-caption="International Neuronexus Symposium"><img src="image/ynan/thumb/neuronexus-01.jpg" alt="International Neuronexus Symposium" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item" href="image/ynan/full/neuronexus-02.jpg" data-fancybox="neuronexus" data-caption="International Neuronexus Symposium"><img src="image/ynan/thumb/neuronexus-02.jpg" alt="International Neuronexus Symposium" loading="lazy" decoding="async" width="480" height="360"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Travel Grants &amp; Conference Awards -->
+    <div class="hb-section bg-default-3" id="conferences">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <div class="section-title section-title--l3">
+              <h6 class="section-title__sub-heading"><i class="fas fa-plane me-2"></i>Global exposure</h6>
+              <h2 class="section-title__heading pg-title">Travel Grants &amp; Conference Awards</h2>
+              <p class="section-title__description">Travel grants support members to attend and present at national conferences such as the annual Neuroscience Society of Nigeria (NSN) conference, where many have won presentation awards.</p>
+              <ul class="hb-list pg-outcomes">
+                  <li>Student research presentations and posters</li>
+                  <li>Award recognition for members</li>
+                  <li>Greater visibility for Nigerian students</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="pg-gallery">
+              <a class="pg-gallery__item" href="image/ynan/full/conferences-01.jpg" data-fancybox="conferences" data-caption="YNAN members at a neuroscience conference"><img src="image/ynan/thumb/conferences-01.jpg" alt="YNAN members at a neuroscience conference" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item" href="image/ynan/full/conferences-02.jpg" data-fancybox="conferences" data-caption="YNAN members at a neuroscience conference"><img src="image/ynan/thumb/conferences-02.jpg" alt="YNAN members at a neuroscience conference" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item" href="image/ynan/full/conferences-03.jpg" data-fancybox="conferences" data-caption="YNAN members at a neuroscience conference"><img src="image/ynan/thumb/conferences-03.jpg" alt="YNAN members at a neuroscience conference" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item" href="image/ynan/full/conferences-04.jpg" data-fancybox="conferences" data-caption="YNAN members at a neuroscience conference"><img src="image/ynan/thumb/conferences-04.jpg" alt="YNAN members at a neuroscience conference" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item" href="image/ynan/full/conferences-05.jpg" data-fancybox="conferences" data-caption="YNAN members at a neuroscience conference"><img src="image/ynan/thumb/conferences-05.jpg" alt="YNAN members at a neuroscience conference" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item" href="image/ynan/full/conferences-06.jpg" data-fancybox="conferences" data-caption="YNAN members at a neuroscience conference"><img src="image/ynan/thumb/conferences-06.jpg" alt="YNAN members at a neuroscience conference" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item d-none" href="image/ynan/full/conferences-07.jpg" data-fancybox="conferences" data-caption="YNAN members at a neuroscience conference"><img src="image/ynan/thumb/conferences-07.jpg" alt="YNAN members at a neuroscience conference" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item d-none" href="image/ynan/full/conferences-08.jpg" data-fancybox="conferences" data-caption="YNAN members at a neuroscience conference"><img src="image/ynan/thumb/conferences-08.jpg" alt="YNAN members at a neuroscience conference" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item d-none" href="image/ynan/full/conferences-09.jpg" data-fancybox="conferences" data-caption="YNAN members at a neuroscience conference"><img src="image/ynan/thumb/conferences-09.jpg" alt="YNAN members at a neuroscience conference" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item d-none" href="image/ynan/full/conferences-10.jpg" data-fancybox="conferences" data-caption="YNAN members at a neuroscience conference"><img src="image/ynan/thumb/conferences-10.jpg" alt="YNAN members at a neuroscience conference" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item d-none" href="image/ynan/full/conferences-11.jpg" data-fancybox="conferences" data-caption="YNAN members at a neuroscience conference"><img src="image/ynan/thumb/conferences-11.jpg" alt="YNAN members at a neuroscience conference" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item d-none" href="image/ynan/full/conferences-12.jpg" data-fancybox="conferences" data-caption="YNAN members at a neuroscience conference"><img src="image/ynan/thumb/conferences-12.jpg" alt="YNAN members at a neuroscience conference" loading="lazy" decoding="async" width="480" height="360"></a>
+            </div>
+            <a class="pg-gallery__more" href="image/ynan/full/conferences-01.jpg" data-fancybox-trigger="conferences">View all 12 photos</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hands-On Training &amp; Research Capacity Building -->
+    <div class="hb-section bg-default" id="training">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <div class="section-title section-title--l3">
+              <h6 class="section-title__sub-heading"><i class="fas fa-microscope me-2"></i>Bridging theory and practice</h6>
+              <h2 class="section-title__heading pg-title">Hands-On Training &amp; Research Capacity Building</h2>
+              <p class="section-title__description">Practical laboratory neuroscience training, scientific writing workshops and capacity-building programmes.</p>
+              <ul class="hb-list pg-outcomes">
+                  <li>Practical lab and research skills</li>
+                  <li>Preparation for academic and professional careers</li>
+                  <li>Training delivered across chapters</li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="pg-gallery">
+              <a class="pg-gallery__item" href="image/ynan/full/training-01.jpg" data-fancybox="training" data-caption="Hands-on neuroscience training"><img src="image/ynan/thumb/training-01.jpg" alt="Hands-on neuroscience training" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item" href="image/ynan/full/training-02.jpg" data-fancybox="training" data-caption="Hands-on neuroscience training"><img src="image/ynan/thumb/training-02.jpg" alt="Hands-on neuroscience training" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item" href="image/ynan/full/training-03.jpg" data-fancybox="training" data-caption="Hands-on neuroscience training"><img src="image/ynan/thumb/training-03.jpg" alt="Hands-on neuroscience training" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item" href="image/ynan/full/training-04.jpg" data-fancybox="training" data-caption="Hands-on neuroscience training"><img src="image/ynan/thumb/training-04.jpg" alt="Hands-on neuroscience training" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item" href="image/ynan/full/training-05.jpg" data-fancybox="training" data-caption="Hands-on neuroscience training"><img src="image/ynan/thumb/training-05.jpg" alt="Hands-on neuroscience training" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item" href="image/ynan/full/training-06.jpg" data-fancybox="training" data-caption="Hands-on neuroscience training"><img src="image/ynan/thumb/training-06.jpg" alt="Hands-on neuroscience training" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item d-none" href="image/ynan/full/training-07.jpg" data-fancybox="training" data-caption="Hands-on neuroscience training"><img src="image/ynan/thumb/training-07.jpg" alt="Hands-on neuroscience training" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item d-none" href="image/ynan/full/training-08.jpg" data-fancybox="training" data-caption="Hands-on neuroscience training"><img src="image/ynan/thumb/training-08.jpg" alt="Hands-on neuroscience training" loading="lazy" decoding="async" width="480" height="360"></a>
+            </div>
+            <a class="pg-gallery__more" href="image/ynan/full/training-01.jpg" data-fancybox-trigger="training">View all 8 photos</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Curriculum & Resources -->
+    <div class="hb-section bg-default-3" id="resources">
+      <div class="container">
+        <div class="section-title section-title--l3 mb-5">
+          <h6 class="section-title__sub-heading"><i class="fas fa-book me-2"></i>Learning resources</h6>
+          <h2 class="section-title__heading">Curriculum &amp; Resource Development</h2>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 mb-4"><div class="hb-card h-100"><h4 class="hb-card__title">NeuroClub curricula</h4><p>Structured introductory neuroscience curricula that make early learning in schools possible.</p></div></div>
+          <div class="col-lg-4 mb-4"><div class="hb-card h-100"><h4 class="hb-card__title">Neuroscience at a Glance</h4><p>An illustrated guide that simplifies complex concepts for high school and undergraduate students.</p></div></div>
+          <div class="col-lg-4 mb-4"><div class="hb-card h-100"><h4 class="hb-card__title">Webinars &amp; digital resources</h4><p>Webinars, blogs and digital resources on YNAN platforms, plus monthly online workshops and a lecture series for members.</p></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Partners & Global -->
+    <div class="hb-section bg-default" id="partners">
+      <div class="container">
+        <div class="section-title section-title--l3 mb-5">
+          <h6 class="section-title__sub-heading"><i class="fas fa-globe-africa me-2"></i>Collaboration</h6>
+          <h2 class="section-title__heading">Partners &amp; global impact</h2>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 mb-4"><div class="hb-card h-100"><h4 class="hb-card__title">Our partners</h4>
+            <ul class="hb-list">
+              <li>International Youth Neuroscience Association (IYNA)</li>
+              <li>NeuroKids USA</li>
+              <li>Pro Encephalon</li>
+              <li>Brain Wellness Initiative</li>
+              <li>Lawrence Technological University, USA</li>
+              <li>Neuroscience Society of Nigeria (NSN)</li>
+            </ul></div></div>
+          <div class="col-lg-4 mb-4"><div class="hb-card h-100"><h4 class="hb-card__title">On the global stage</h4>
+            <ul class="hb-list">
+              <li><strong>80th UN General Assembly Science Summit</strong> (2025, New York): “Building a Brain-Literate World: Science for Human Development and Sustainability – The Nigerian Youth Case.”</li>
+              <li><strong>Brain Literacy Alliance Inauguration</strong> (2026, Singapore): a Neuroeducation Program for Young Minds.</li>
+            </ul>
+            <p class="hb-note">Both presented virtually by our founder, Dr. Chinna Orish.</p></div></div>
+          <div class="col-lg-4 mb-4"><div class="hb-card h-100"><h4 class="hb-card__title">Grants</h4>
+            <ul class="hb-list">
+              <li><strong>Brain Awareness Week Grant</strong> (2022): workshops, seminars and Brain Bee activities for high school and undergraduate students.</li>
+              <li><strong>IBRO Diversity Grant</strong> (2022): funded Nigeria's first national Brain Bee, with students from all six geopolitical zones, held at the annual NSN conference.</li>
+            </ul></div></div>
+        </div>
+        <div class="mt-3">
+          <div class="pg-gallery pg-gallery--4">
+              <a class="pg-gallery__item" href="image/ynan/full/partners-01.jpg" data-fancybox="partners" data-caption="YNAN partnership"><img src="image/ynan/thumb/partners-01.jpg" alt="YNAN partnership" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item" href="image/ynan/full/partners-02.jpg" data-fancybox="partners" data-caption="YNAN partnership"><img src="image/ynan/thumb/partners-02.jpg" alt="YNAN partnership" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item" href="image/ynan/full/partners-03.jpg" data-fancybox="partners" data-caption="YNAN partnership"><img src="image/ynan/thumb/partners-03.jpg" alt="YNAN partnership" loading="lazy" decoding="async" width="480" height="360"></a>
+              <a class="pg-gallery__item" href="image/ynan/full/partners-04.jpg" data-fancybox="partners" data-caption="YNAN partnership"><img src="image/ynan/thumb/partners-04.jpg" alt="YNAN partnership" loading="lazy" decoding="async" width="480" height="360"></a>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hb-section bg-default-3 pt-0">
+      <div class="container text-center pt-5">
+        <p class="pg-quote">“One spark of curiosity can ignite a lifetime of discovery.”</p>
+        <p>— Dr. Chinna Orish, Founder</p>
+        <a class="btn btn-primary text-white rounded-50 mt-3" href="handbook.html#chapters">Start or join a chapter</a>
       </div>
     </div>
     <!-- promo Area -->
@@ -212,6 +502,11 @@
                 <p class="footer-widgets__text mt-5">
                   Empowering primary school, high school and<br class="d-none d-xl-block"> undergraduate students to pursue<br class="d-none d-xl-block"> careers in neuroscience.</p>
                 <ul class="footer-social-share footer-social-share--rounded mt-4">
+                  <li>
+                    <a href="https://web.facebook.com/youthneurong/" target="_blank" rel="noopener">
+                      <i class="fab fa-facebook-square"></i>
+                    </a>
+                  </li>
                   <li>
                     <a href="https://www.instagram.com/ynan_001" target="_blank" rel="noopener">
                       <i class="fab fa-instagram"></i>

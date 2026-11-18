@@ -52,6 +52,22 @@
     .pg-quote { font-size: 26px; font-style: italic; font-weight: 600; max-width: 760px; margin: 0 auto 8px; }
     .pg-gallery--4 { grid-template-columns: repeat(4, 1fr); }
     @media (max-width: 575px) { .pg-gallery, .pg-gallery--4 { grid-template-columns: repeat(2, 1fr); gap: 8px; } .pg-stat__num { font-size: 32px; } }
+    .cba { background: linear-gradient(135deg, #0b5d2a 0%, #0d7a4a 55%, #1a8f8a 100%); color: #fff; padding: 80px 0 60px; }
+    .cba h2, .cba h3, .cba h4, .cba h6, .cba p, .cba li { color: #fff; }
+    .cba__eyebrow { display: inline-block; font-size: 14px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; background: rgba(255,255,255,.15); padding: 6px 14px; border-radius: 50px; margin-bottom: 18px; }
+    .cba__title { font-size: 44px; font-weight: 800; line-height: 1.15; margin-bottom: 10px; }
+    .cba__tagline { font-size: 20px; font-weight: 600; opacity: .9; margin-bottom: 18px; }
+    .cba__intro { font-size: 17px; line-height: 1.7; opacity: .9; max-width: 760px; }
+    .cba__card { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18); border-radius: 14px; padding: 24px 22px; height: 100%; }
+    .cba__card i { font-size: 26px; margin-bottom: 14px; color: #ffd84d; }
+    .cba__card h4 { font-size: 19px; font-weight: 700; margin-bottom: 8px; }
+    .cba__card p { font-size: 15px; line-height: 1.6; margin: 0; opacity: .9; }
+    .cba__num { font-size: 13px; font-weight: 700; opacity: .6; margin-left: 6px; vertical-align: middle; }
+    .cba__vision { margin-top: 30px; padding: 26px 28px; border-left: 4px solid #ffd84d; background: rgba(0,0,0,.12); border-radius: 0 12px 12px 0; }
+    .cba__vision p { font-size: 20px; font-weight: 600; margin: 0; }
+    .cba .btn-cba { background: #ffd84d; color: #13361f; font-weight: 700; border-radius: 50px; padding: 12px 28px; }
+    .cba .btn-cba:hover { background: #fff; color: #13361f; }
+    @media (max-width: 575px) { .cba { padding: 60px 0 40px; } .cba__title { font-size: 32px; } }
   </style>
 </head>
 
@@ -160,6 +176,50 @@
       </div>
     </div>
     <!--/ .Impact Area -->
+    <!-- Climate and the Brain Africa -->
+    <div class="cba" id="climate-brain">
+      <div class="container">
+        <span class="cba__eyebrow"><i class="fas fa-globe-africa me-2"></i>YNAN Initiative</span>
+        <h2 class="cba__title">Climate and the Brain Africa (CBA)</h2>
+        <p class="cba__tagline">Connecting Climate Action, Neuroscience and Community Health.</p>
+        <p class="cba__intro mb-5">An initiative led by the Youth Neuroscience Association of Nigeria (YNAN) to promote awareness of the impact of climate change on brain health.</p>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 mb-4"><div class="cba__card">
+            <i class="fas fa-brain"></i>
+            <h4>Climate and Brain Awareness<span class="cba__num">01</span></h4>
+            <p>Educating young people on climate change and brain health.</p>
+          </div></div>
+          <div class="col-lg-4 col-md-6 mb-4"><div class="cba__card">
+            <i class="fas fa-user-graduate"></i>
+            <h4>Youth Ambassadors<span class="cba__num">02</span></h4>
+            <p>Training young climate and neuroscience advocates.</p>
+          </div></div>
+          <div class="col-lg-4 col-md-6 mb-4"><div class="cba__card">
+            <i class="fas fa-school"></i>
+            <h4>Community Engagement<span class="cba__num">03</span></h4>
+            <p>Taking climate and brain-health education to schools and communities.</p>
+          </div></div>
+          <div class="col-lg-4 col-md-6 mb-4"><div class="cba__card">
+            <i class="fas fa-flask"></i>
+            <h4>Citizen Science<span class="cba__num">04</span></h4>
+            <p>Engaging youth in environmental and cognitive wellbeing research.</p>
+          </div></div>
+          <div class="col-lg-4 col-md-6 mb-4"><div class="cba__card">
+            <i class="fas fa-leaf"></i>
+            <h4>Climate Action<span class="cba__num">05</span></h4>
+            <p>Promoting community-led solutions to heat exposure, flooding and pollution.</p>
+          </div></div>
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="cba__vision h-100 mt-0">
+              <h6 class="mb-2" style="opacity:.75;text-transform:uppercase;letter-spacing:.08em;font-size:13px;">Our vision</h6>
+              <p>Empowering African youth to connect neuroscience, environmental sustainability and community health.</p>
+            </div>
+          </div>
+        </div>
+        <a class="btn btn-cba mt-3" href="contact-1.html">Get involved with CBA</a>
+      </div>
+    </div>
+    <!--/ .Climate and the Brain Africa -->
 
     <!-- NeuroClub Initiative -->
     <div class="hb-section bg-default-3" id="neuroclub">

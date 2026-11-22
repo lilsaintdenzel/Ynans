@@ -118,41 +118,48 @@
               <h2 class="section-title__heading mb-4">
                 Send A Message
               </h2>
-              <div class="alert">Your message has been sent</div>
+              <div class="alert" id="contact-sent" role="status">Thank you! Your message has been sent to YNAN. We will get back to you by email.</div>
               <p class="section-title__description">Questions about membership, starting a chapter or partnering with YNAN? <br class="d-none d-xs-block"/> Send us a message and the National Secretariat will get back to you.</p>
             </div>
-            <form  class="contact-form" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300" data-aos-once="true" id="contactForm">
+            <form class="contact-form" data-aos="fade-up" data-aos-duration="500" data-aos-delay="300" data-aos-once="true" id="contactForm" method="POST" action="https://formsubmit.co/nationalynanneuroscience@gmail.com">
+              <!-- FormSubmit emails each message to YNAN -->
+              <input type="hidden" name="_subject" value="New message from the YNAN website">
+              <input type="hidden" name="_next" value="https://ynan.org.ng/contact-1.html?sent=1">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="false">
+              <p style="position:absolute;left:-9999px;"><label>Leave this empty: <input name="_honey" tabindex="-1" autocomplete="off"></label></p>
               <div class="row">
-                <div class="col-lg-6 mb-4">
+                <div class="col-lg-12 mb-4">
                   <div class="form-floating">
-                    <input class="form-control" placeholder="Leave a comment here" id="floatinginput" id="email" required/>
-                    <label for="floatinginput">Your Email</label>
+                    <input class="form-control" placeholder="Your name" id="contact-name" name="name" autocomplete="name" required>
+                    <label for="contact-name">Your Name *</label>
                   </div>
                 </div>
                 <div class="col-lg-6 mb-4">
                   <div class="form-floating">
-                    <input class="form-control" placeholder="Leave a comment here" id="floatinginput2" id="phone" required />
-                    <label for="floatinginput2">Phone number</label>
+                    <input class="form-control" type="email" placeholder="Your email" id="contact-email" name="email" autocomplete="email" required>
+                    <label for="contact-email">Your Email *</label>
+                  </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                  <div class="form-floating">
+                    <input class="form-control" type="tel" placeholder="Phone number" id="contact-phone" name="phone" autocomplete="tel">
+                    <label for="contact-phone">Phone Number</label>
                   </div>
                 </div>
                 <div class="col-lg-12">
                   <div class="form-floating">
-                    <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea3" id="message" style="height: 100px" required></textarea>
-                    <label for="floatingTextarea3">Your Message Here </label>
+                    <textarea class="form-control" placeholder="Your message" id="contact-message" name="message" style="height: 140px" required></textarea>
+                    <label for="contact-message">Your Message *</label>
                   </div>
                 </div>
                 <div class="col-lg-12">
                   <div class="row align-items-center mt-3">
                     <div class="col-md-8 col-lg-7 col-md-6 col-xl-8 pt-3">
-                      <div class="form-check d-flex align-items-center">
-                        <input class="form-check-input bg-white float-none mt-0" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="form-check-label" for="flexCheckDefault">
-                          Your email address will not be published. Required fields are marked *
-                        </label>
-                      </div>
+                      <p class="mb-0" style="font-size:15px;opacity:.75;">Your message is emailed to the YNAN National Secretariat. Required fields are marked *</p>
                     </div>
                     <div class="col-md-4 col-lg-5 col-xl-4 text-md-end pt-3">
-                      <button class="btn btn-primary shadow--primary-4 btn--lg-2 rounded-55 text-white" type="submit">Send Message</button>
+                      <button class="btn btn-primary shadow--primary-4 btn--lg-2 rounded-55 text-white" type="submit" id="contact-submit">Send Message</button>
                     </div>
                   </div>
                 </div>
@@ -313,31 +320,27 @@
   
 
 
-  <script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.6.3/firebase-analytics.js"; 
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-  
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    // const firebaseConfig = {
-    //   apiKey: "AIzaSyAO89o6_5RQVDAQy7yfwrpfWbOCwqjLrcE",
-    //   authDomain: "ynan-2d8f7.firebaseapp.com",
-    //   projectId: "ynan-2d8f7",
-    //   storageBucket: "ynan-2d8f7.appspot.com",
-    //   messagingSenderId: "583393073957",
-    //   appId: "1:583393073957:web:8a0750f45661be60b098cc",
-    //   measurementId: "G-L4EBGPCJ1F"
-    // };
-  
-    // Initialize Firebase
-  //   const app = initializeApp(firebaseConfig);
-  //   const analytics = getAnalytics(app);
-   // </script>
 
-<script src="./main.js"> </script>
+<script>
+  (function () {
+    var form = document.getElementById('contactForm');
+    if (/[?&]sent=1/.test(location.search)) {
+      var a = document.getElementById('contact-sent');
+      a.style.display = 'block';
+      a.scrollIntoView({ block: 'center' });
+      history.replaceState(null, '', location.pathname);
+    }
+    form.addEventListener('submit', function () {
+      if (/^https?:$/.test(location.protocol)) form.querySelector('[name="_next"]').value = location.origin + location.pathname + '?sent=1';
+      var btn = document.getElementById('contact-submit');
+      btn.disabled = true; btn.textContent = 'Sending…';
+    });
+    window.addEventListener('pageshow', function () {
+      var btn = document.getElementById('contact-submit');
+      btn.disabled = false; btn.textContent = 'Send Message';
+    });
+  })();
+</script>
 </body>
 
 

@@ -16773,3 +16773,15 @@ mark[data-aos="highlight-text"].aos-animate {
 }
 
 /*# sourceMappingURL=maps/main.css.map */
+
+/* YNAN: round social buttons in every footer (matches the Contact page) */
+.footer-social-share.footer-social-share--rounded { display: flex; flex-wrap: wrap; gap: 12px; padding: 0; margin-left: 0; list-style: none; }
+.footer-social-share.footer-social-share--rounded li { margin: 0; padding: 0; }
+.footer-social-share.footer-social-share--rounded li a { width: 44px; height: 44px; border-radius: 50%; background: #008000; color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 18px; margin: 0; text-decoration: none; transition: transform .2s, background .2s, color .2s; }
+.footer-social-share.footer-social-share--rounded li a::before { display: none; }
+.footer-social-share.footer-social-share--rounded li a:hover,
+.footer-social-share.footer-social-share--rounded li a:focus-visible { background: #ffd84d; color: #13361f; transform: translateY(-3px); }
+.footer-social-share.footer-social-share--rounded li a i { color: inherit; }
+.bg-shark .footer-social-share.footer-social-share--rounded li a { background: #fff; color: #008000; }
+.bg-shark .footer-social-share.footer-social-share--rounded li a:hover,
+.bg-shark .footer-social-share.footer-social-share--rounded li a:focus-visible { background: #ffd84d; color: #13361f; }

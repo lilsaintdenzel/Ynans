@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>
+    Outreach Grant Application | Youth Neuroscience Association of Nigeria (YNAN)
+  </title>
+  <link rel="shortcut icon" href="image/png/favicon.png" type="image/x-icon">
+  <!-- Bootstrap , fonts & icons  -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="fonts/icon-font/css/style.css">
+  <link rel="stylesheet" href="fonts/typography-font/typo.css">
+  <link rel="stylesheet" href="fonts/fontawesome-5/css/all.css">
+  <!-- Plugin'stylesheets  -->
+  <link rel="stylesheet" href="plugins/aos/aos.min.css">
+  <link rel="stylesheet" href="plugins/fancybox/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="plugins/nice-select/nice-select.min.css">
+  <link rel="stylesheet" href="plugins/slick/slick.min.css">
+  <!-- Vendor stylesheets  -->
+  <link rel="stylesheet" href="plugins/theme-mode-switcher/switcher-panel.css">
+  <link rel="stylesheet" href="css/main.css">
+  <!-- Custom stylesheet -->
+  <style>
+    .hb-section { padding: 70px 0 50px; }
+    .hb-card { background: var(--bs-white, #fff); border-radius: 12px; padding: 28px 26px; box-shadow: 0 6px 24px rgba(15,23,42,.06); }
+    .bg-default .hb-card { background: #f7f7fb; }
+    .hb-card__title { font-size: 20px; font-weight: 700; margin-bottom: 14px; }
+    .hb-card p { margin-bottom: 10px; }
+    .hb-list { padding-left: 1.2rem; margin: 0; }
+    .hb-list li { margin-bottom: 8px; line-height: 1.6; }
+    .hb-list ul { padding-left: 1.1rem; margin-top: 6px; list-style: circle; }
+    .hb-jump { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 24px; }
+    .hb-jump a { padding: 8px 16px; border-radius: 50px; background: rgba(255,255,255,.85); font-size: 15px; font-weight: 600; color: #262729; }
+    .hb-jump a:hover { background: #fff; }
+    .hb-note { font-style: italic; font-size: 15px; opacity: .8; margin-top: 10px; }
+    .hb-stat { font-size: 40px; font-weight: 700; line-height: 1; margin-bottom: 8px; }
+    .hb-chapter { background: #fff; border-radius: 12px; padding: 22px 22px 18px; box-shadow: 0 6px 24px rgba(15,23,42,.06); border-top: 4px solid #008000; }
+    .hb-chapter__num { font-size: 14px; font-weight: 700; opacity: .5; }
+    .hb-chapter__name { font-size: 17px; font-weight: 700; line-height: 1.4; margin: 6px 0 10px; }
+    .hb-chapter__state { font-size: 15px; margin: 0; opacity: .75; }
+    .gr-wrap { padding: 60px 0 80px; }
+    .gr-call { background: linear-gradient(135deg, #0b5d2a 0%, #0d7a4a 55%, #1a8f8a 100%); color: #fff; border-radius: 16px; padding: 34px 32px; margin-bottom: 36px; }
+    .gr-call h2, .gr-call h4, .gr-call p, .gr-call li, .gr-call strong { color: #fff; }
+    .gr-call__theme { font-size: 26px; font-weight: 800; line-height: 1.3; margin: 6px 0 20px; }
+    .gr-call__amount { display: inline-block; background: #ffd84d; color: #13361f !important; font-weight: 800; font-size: 20px; border-radius: 50px; padding: 8px 20px; margin-bottom: 18px; }
+    .gr-call ul { padding-left: 1.2rem; margin-bottom: 0; }
+    .gr-call li { margin-bottom: 6px; line-height: 1.6; }
+    .gr-fieldset { background: #fff; border-radius: 14px; padding: 28px 28px 12px; margin-bottom: 24px; box-shadow: 0 6px 24px rgba(15,23,42,.06); }
+    .gr-fieldset legend { float: left; width: 100%; padding: 0; font-size: 21px; font-weight: 700; line-height: 1.35; margin-bottom: 8px; }
+    .gr-fieldset legend + * { clear: both; }
+    .gr-step { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: #008000; color: #fff; font-size: 15px; margin-right: 10px; vertical-align: middle; }
+    .gr-hint { font-size: 14px; opacity: .7; margin-bottom: 18px; }
+    .gr-form label.gr-label { display: block; font-weight: 600; font-size: 15px; margin-bottom: 6px; }
+    .gr-form .req { color: #c0392b; }
+    .gr-form .form-control { border-radius: 10px; min-height: 48px; font-size: 16px; }
+    .gr-form textarea.form-control { min-height: 120px; }
+    .gr-field { margin-bottom: 20px; }
+    .gr-radio { display: inline-flex; align-items: center; gap: 8px; margin: 0 22px 8px 0; font-weight: 500; cursor: pointer; }
+    .gr-radio input, .gr-check input { width: 18px; height: 18px; accent-color: #008000; }
+    .gr-check { display: flex; gap: 10px; align-items: flex-start; font-weight: 500; cursor: pointer; }
+    .gr-check input { margin-top: 4px; flex: none; }
+    .gr-budget { width: 100%; border-collapse: separate; border-spacing: 0 8px; }
+    .gr-budget th { font-size: 14px; font-weight: 700; opacity: .7; padding: 0 6px; }
+    .gr-budget td { padding: 0 6px; vertical-align: middle; }
+    .gr-budget .form-control { min-height: 44px; }
+    .gr-amount { font-weight: 700; white-space: nowrap; text-align: right; }
+    .gr-total { display: flex; justify-content: space-between; align-items: center; border-top: 2px solid #e5e7eb; padding: 16px 6px 8px; font-size: 20px; font-weight: 800; }
+    .gr-total.over { color: #c0392b; }
+    .gr-total__note { font-size: 14px; font-weight: 600; }
+    .gr-list { padding-left: 1.2rem; }
+    .gr-list li { margin-bottom: 6px; }
+    .gr-submit { background: #008000; color: #fff; font-weight: 700; border-radius: 50px; padding: 14px 36px; font-size: 17px; border: 0; }
+    .gr-submit:hover { background: #006400; color: #fff; }
+    .gr-hidden { position: absolute; left: -9999px; }
+    @media (max-width: 767px) {
+      .gr-fieldset { padding: 22px 16px 6px; }
+      .gr-call { padding: 26px 20px; }
+      .gr-budget thead { display: none; }
+      .gr-budget tr { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; background: #f7f7fb; border-radius: 10px; padding: 10px; margin-bottom: 10px; }
+      .gr-budget td { padding: 0; }
+      .gr-budget td:first-child { grid-column: 1 / -1; }
+      .gr-budget td.gr-amount { grid-column: 1 / -1; text-align: left; }
+      .gr-budget td.gr-amount::before { content: "Amount: "; font-weight: 600; opacity: .7; }
+    }
+  </style>
+</head>
+
+<body data-theme-mode-panel-active data-theme="light">
+  <div class="site-wrapper overflow-hidden ">
+    <div id="loading">
+      <img src="image/preloader.gif" alt="">
+    </div>
+    <!-- Clean The Code And Hop in -->
+    <!-- Header Area -->
+    <!-- Preloader -->
+    <!-- <div id="loading">
+    <div class="preloader">
+     <img src="./image/preloader-3.gif" alt="preloader">
+   </div>
+   </div>   -->
+    <!-- Header Area -->
+    <header class="site-header site-header--menu-left dynamic-sticky-bg px-3 site-header--absolute site-header--sticky">
+      <div class="container-fluid">
+        <nav class="navbar site-navbar">
+          <!-- Brand Logo-->
+          <div class="brand-logo">
+            <a href="#">
+              <!-- light version logo (logo must be black)-->
+              <img src="image/png/ynan.png" alt="" class="light-version-logo" style='height:70px;'>
+              <!-- Dark version logo (logo must be White)-->
+              <img src="image/png/ynan.png" alt="" class="dark-version-logo">
+            </a>
+          </div>
+          <div class="menu-block-wrapper  ms-lg-7">
+            <div class="menu-overlay"></div>
+            <nav class="menu-block" id="append-menu-header">
+              <div class="mobile-menu-head">
+                <div class="go-back">
+                  <i class="fa fa-angle-left"></i>
+                </div>
+                <div class="current-menu-title"></div>
+                <div class="mobile-menu-close">&times;</div>
+              </div>
+              <ul class="site-menu-main">
+                <li class="nav-item nav-item-has-children">
+                  <a href="home.html" class="nav-link-item drop-trigger">Home 
+                  </a>
+                </li>
+                <li class="nav-item nav-item-has-children">
+                  <a href="about-us.html" class="nav-link-item drop-trigger">About Us 
+                  </a>
+                  
+                </li>
+                <li class="nav-item">
+                  <a href="handbook.html" class="nav-link-item">Membership &amp; Chapters</a>
+                </li>
+                <li class="nav-item">
+                  <a href="event.html" class="nav-link-item">Programmes</a>
+                </li>
+                <li class="nav-item">
+                  <a href="grant.html" class="nav-link-item">Outreach Grant</a>
+                </li>
+                <li class="nav-item nav-item-has-children">
+                  <a href="contact-1.html" class="nav-link-item drop-trigger">Contact 
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="header-btns  ms-auto ms-lg-0 d-none d-sm-flex align-items-center">
+            <a class="btn-link heading-default-color-2 me-4" href="handbook.html#membership">
+              Join YNAN
+            </a>
+            <a class="btn btn-header-btns btn-link-water btn--medium-2 h-45 text-shark rounded-5 ms-1" href="https://chat.whatsapp.com/L41TmlycZkFGH2Kjyl6I0a">
+      Group chat
+          
+            </a>
+          </div>
+          <!-- mobile menu trigger -->
+          <div class="mobile-menu-trigger">
+            <span></span>
+          </div>
+          <!--/.Mobile Menu Hamburger Ends-->
+        </nav>
+      </div>
+    </header>
+    <!--/ .Header Area -->
+
+
+    <!-- Page Title Area -->
+    <div class="page-title-content text-center bg-default-3">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xl-8">
+            <h2 class="page-title-content__heading">Outreach Grant Application</h2>
+            <p class="page-title-content__text">YNAN Call for Outreach Grant: apply on behalf of your chapter to run a neuroclimate and brain health outreach.</p>
+          </div>
+        </div>
+      </div>
+      <div class="shape">
+        <img class="w-100" src="image/png/inner-banner-shape.png" alt="">
+      </div>
+    </div>
+    <!--/ .Page Title Area -->
+    <div class="gr-wrap bg-default-3">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xl-9 col-lg-10">
+            <div class="gr-call">
+              <h4 class="mb-0" style="opacity:.8;font-size:15px;text-transform:uppercase;letter-spacing:.08em;">Theme</h4>
+              <p class="gr-call__theme">“Neuroclimate and Brain Health for the Youth: Understanding How Climate Change Affects the Brain.”</p>
+              <span class="gr-call__amount">₦50,000 per successful chapter</span>
+              <ul>
+                <li><strong>Eligibility:</strong> active YNAN chapters in Nigerian universities and communities.</li>
+                <li><strong>Supported activities:</strong> school outreach, public lectures, social media campaigns, brain health walks, environmental awareness campaigns and interactive workshops on climate change and brain health.</li>
+                <li><strong>Your application should cover:</strong> the proposed activity, target audience, expected impact, implementation plan and budget.</li>
+                <li><strong>Follow-up award:</strong> the chapter with the most impactful outreach receives the <strong>YNAN Neuroclimate Brain Awareness Champion Award</strong>.</li>
+              </ul>
+              <p class="mt-3 mb-0" style="font-size:15px;opacity:.85;">Part of <a href="event.html#climate-brain" style="color:#ffd84d;font-weight:700;">Climate and the Brain Africa (CBA)</a>. Fields marked <span style="color:#ffd84d;">*</span> are required.</p>
+            </div>
+
+            <form class="gr-form" name="outreach-grant" method="POST" action="/grant-thanks.html" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
+              <input type="hidden" name="form-name" value="outreach-grant">
+              <p class="gr-hidden"><label>Leave this empty: <input name="bot-field"></label></p>
+
+            <fieldset class="gr-fieldset">
+              <legend><span class="gr-step">1</span>Event details</legend>
+              <div class="row">
+                <div class="col-md-6">
+              <div class="gr-field">
+                  <label class="gr-label" for="f-event_name">Event name <span class="req">*</span></label>
+                  <input class="form-control" type="text" id="f-event_name" name="event_name" required>
+                </div>
+                </div>
+                <div class="col-md-6">
+              <div class="gr-field">
+                  <label class="gr-label" for="f-event_date">Date <span class="req">*</span></label>
+                  <input class="form-control" type="date" id="f-event_date" name="event_date" required>
+                </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+              <div class="gr-field">
+                  <label class="gr-label" for="f-location">Location <span class="req">*</span></label>
+                  <div class="gr-hint mb-2">Venue, town/city and state</div>
+                  <input class="form-control" type="text" id="f-location" name="location" required>
+                </div>
+                </div>
+              </div>
+              <div class="gr-field">
+                <span class="gr-label">Mode <span class="req">*</span></span>
+                <label class="gr-radio"><input type="radio" name="mode" value="In person" required> In person</label>
+                <label class="gr-radio"><input type="radio" name="mode" value="Virtual"> Virtual</label>
+                <label class="gr-radio"><input type="radio" name="mode" value="Hybrid"> Hybrid</label>
+              </div>
+              <div class="gr-field">
+                <span class="gr-label">Type of activity</span>
+                <div class="gr-hint mb-2">Tick all that apply.</div>
+                <label class="gr-radio"><input type="checkbox" name="activity_type" value="School outreach"> School outreach</label>
+                <label class="gr-radio"><input type="checkbox" name="activity_type" value="Public lecture"> Public lecture</label>
+                <label class="gr-radio"><input type="checkbox" name="activity_type" value="Social media campaign"> Social media campaign</label>
+                <label class="gr-radio"><input type="checkbox" name="activity_type" value="Brain health walk"> Brain health walk</label>
+                <label class="gr-radio"><input type="checkbox" name="activity_type" value="Environmental awareness campaign"> Environmental awareness campaign</label>
+                <label class="gr-radio"><input type="checkbox" name="activity_type" value="Interactive workshop"> Interactive workshop</label>
+              </div>
+            </fieldset>
+
+            <fieldset class="gr-fieldset">
+              <legend><span class="gr-step">2</span>Chapter information</legend>
+              <div class="gr-field">
+                <label class="gr-label" for="f-chapter">Chapter <span class="req">*</span></label>
+                <div class="gr-hint mb-2">Start typing to pick your chapter, or enter it if it isn't listed.</div>
+                <input class="form-control" type="text" id="f-chapter" name="chapter" list="chapter-list" required autocomplete="off">
+                <datalist id="chapter-list">
+                  <option value="Prince Abubakar Audu University, Anyigba"></option>
+                  <option value="Bayero University, Kano"></option>
+                  <option value="Yusuf Maitama Sule University, Kano"></option>
+                  <option value="University of Port Harcourt (UNIPORT)"></option>
+                  <option value="Federal University Dutse"></option>
+                  <option value="Chukwuemeka Odumegwu Ojukwu University"></option>
+                  <option value="Gombe State University"></option>
+                  <option value="Bauchi State University, Gadau"></option>
+                  <option value="Ahmadu Bello University, Zaria"></option>
+                  <option value="University of Jos"></option>
+                  <option value="Enugu State University of Science and Technology (ESUT)"></option>
+                  <option value="Ahmadu Bello University (ABU)"></option>
+                  <option value="Kaduna State University (KASU)"></option>
+                  <option value="University of Maiduguri (UNIMAID)"></option>
+                  <option value="Federal University of Technology, Akure (FUTA)"></option>
+                  <option value="Cross River University of Technology (CRUTECH)"></option>
+                  <option value="Kaduna State University (Teaching Hospital Affiliation)"></option>
+                  <option value="University of Nigeria, Nsukka (UNN)"></option>
+                  <option value="University of Ibadan (UI)"></option>
+                  <option value="Achievers University, Owo"></option>
+                </datalist>
+              </div>
+              <div class="gr-field">
+                <label class="gr-label" for="f-chapter_leadership">YNAN chapter leadership <span class="req">*</span></label>
+                <div class="gr-hint mb-2">Names, positions and phone numbers of the chapter executives leading this outreach.</div>
+                <textarea class="form-control" id="f-chapter_leadership" name="chapter_leadership" rows="4" required></textarea>
+              </div>
+              <div class="gr-field">
+                <label class="gr-label" for="f-ex_officio_leadership">Ex-officio leadership</label>
+                <div class="gr-hint mb-2">Staff adviser, patron or other ex-officio members supporting the chapter.</div>
+                <textarea class="form-control" id="f-ex_officio_leadership" name="ex_officio_leadership" rows="3"></textarea>
+              </div>
+              <div class="gr-field">
+                <label class="gr-label" for="f-previous_outreaches">Previous outreaches</label>
+                <div class="gr-hint mb-2">Outreaches your chapter has run before: what, when, where and how many people were reached.</div>
+                <textarea class="form-control" id="f-previous_outreaches" name="previous_outreaches" rows="4"></textarea>
+              </div>
+            </fieldset>
+
+            <fieldset class="gr-fieldset">
+              <legend><span class="gr-step">3</span>Purpose, strategy and abstract</legend>
+              <div class="gr-field">
+                <label class="gr-label" for="f-purpose">Purpose <span class="req">*</span></label>
+                <div class="gr-hint mb-2">What the outreach aims to achieve.</div>
+                <textarea class="form-control" id="f-purpose" name="purpose" rows="4" required></textarea>
+              </div>
+              <div class="gr-field">
+                <label class="gr-label" for="f-event_strategy">Event strategy <span class="req">*</span></label>
+                <div class="gr-hint mb-2">Your implementation plan: how you will deliver the activity, who does what, and how you will reach your audience.</div>
+                <textarea class="form-control" id="f-event_strategy" name="event_strategy" rows="5" required></textarea>
+              </div>
+              <div class="gr-field">
+                <label class="gr-label" for="f-abstract">Abstract <span class="req">*</span></label>
+                <div class="gr-hint mb-2">A short summary of the whole outreach.</div>
+                <textarea class="form-control" id="f-abstract" name="abstract" rows="5" required></textarea>
+              </div>
+            </fieldset>
+
+            <fieldset class="gr-fieldset">
+              <legend><span class="gr-step">4</span>Need, justification and attendance</legend>
+              <div class="gr-field">
+                <label class="gr-label" for="f-need_justification">Need / justification <span class="req">*</span></label>
+                <div class="gr-hint mb-2">Why this outreach is needed in your community, and how it connects climate change and brain health.</div>
+                <textarea class="form-control" id="f-need_justification" name="need_justification" rows="5" required></textarea>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+              <div class="gr-field">
+                  <label class="gr-label" for="f-target_audience">Target audience <span class="req">*</span></label>
+                  <div class="gr-hint mb-2">e.g. secondary school students, undergraduates, community members</div>
+                  <input class="form-control" type="text" id="f-target_audience" name="target_audience" required>
+                </div>
+                </div>
+                <div class="col-md-6">
+              <div class="gr-field">
+                  <label class="gr-label" for="f-expected_attendance">Expected attendance <span class="req">*</span></label>
+                  <div class="gr-hint mb-2">Estimated number of participants</div>
+                  <input class="form-control" type="number" id="f-expected_attendance" name="expected_attendance" required min="1" step="1">
+                </div>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="gr-fieldset">
+              <legend><span class="gr-step">5</span>Agenda and geographical representation</legend>
+              <div class="gr-field">
+                <label class="gr-label" for="f-agenda">Agenda <span class="req">*</span></label>
+                <div class="gr-hint mb-2">Programme of activities with approximate times.</div>
+                <textarea class="form-control" id="f-agenda" name="agenda" rows="6" required></textarea>
+              </div>
+              <div class="gr-field">
+                <label class="gr-label" for="f-geographical_representation">Geographical representation <span class="req">*</span></label>
+                <div class="gr-hint mb-2">Schools, communities, LGAs or states that participants will come from.</div>
+                <textarea class="form-control" id="f-geographical_representation" name="geographical_representation" rows="3" required></textarea>
+              </div>
+            </fieldset>
+
+            <fieldset class="gr-fieldset">
+              <legend><span class="gr-step">6</span>Expected outcomes</legend>
+              <div class="gr-field">
+                <label class="gr-label" for="f-expected_outcome">Expected outcome <span class="req">*</span></label>
+                <div class="gr-hint mb-2">The impact you expect, and how you will measure it (e.g. number reached, feedback, follow-up activities).</div>
+                <textarea class="form-control" id="f-expected_outcome" name="expected_outcome" rows="5" required></textarea>
+              </div>
+            </fieldset>
+
+            <fieldset class="gr-fieldset">
+              <legend><span class="gr-step">7</span>Itemised budget</legend>
+              <p class="gr-hint">List costs and supplies. The total should not exceed ₦50,000.</p>
+              <table class="gr-budget">
+                <thead><tr><th style="width:46%">Costs and supplies</th><th>Quantity</th><th>Unit cost (₦)</th><th class="text-end">Amount</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td><input class="form-control" type="text" name="budget_item_1" placeholder="Item 1" aria-label="Budget item 1" required></td>
+                    <td><input class="form-control gr-qty" type="number" min="0" step="1" name="budget_qty_1" placeholder="Qty" aria-label="Quantity for item 1" required></td>
+                    <td><input class="form-control gr-cost" type="number" min="0" step="1" name="budget_unit_cost_1" placeholder="Unit cost (₦)" aria-label="Unit cost for item 1" required></td>
+                    <td class="gr-amount" data-amount>₦0</td>
+                  </tr>
+                  <tr>
+                    <td><input class="form-control" type="text" name="budget_item_2" placeholder="Item 2" aria-label="Budget item 2"></td>
+                    <td><input class="form-control gr-qty" type="number" min="0" step="1" name="budget_qty_2" placeholder="Qty" aria-label="Quantity for item 2"></td>
+                    <td><input class="form-control gr-cost" type="number" min="0" step="1" name="budget_unit_cost_2" placeholder="Unit cost (₦)" aria-label="Unit cost for item 2"></td>
+                    <td class="gr-amount" data-amount>₦0</td>
+                  </tr>
+                  <tr>
+                    <td><input class="form-control" type="text" name="budget_item_3" placeholder="Item 3" aria-label="Budget item 3"></td>
+                    <td><input class="form-control gr-qty" type="number" min="0" step="1" name="budget_qty_3" placeholder="Qty" aria-label="Quantity for item 3"></td>
+                    <td><input class="form-control gr-cost" type="number" min="0" step="1" name="budget_unit_cost_3" placeholder="Unit cost (₦)" aria-label="Unit cost for item 3"></td>
+                    <td class="gr-amount" data-amount>₦0</td>
+                  </tr>
+                  <tr>
+                    <td><input class="form-control" type="text" name="budget_item_4" placeholder="Item 4" aria-label="Budget item 4"></td>
+                    <td><input class="form-control gr-qty" type="number" min="0" step="1" name="budget_qty_4" placeholder="Qty" aria-label="Quantity for item 4"></td>
+                    <td><input class="form-control gr-cost" type="number" min="0" step="1" name="budget_unit_cost_4" placeholder="Unit cost (₦)" aria-label="Unit cost for item 4"></td>
+                    <td class="gr-amount" data-amount>₦0</td>
+                  </tr>
+                  <tr>
+                    <td><input class="form-control" type="text" name="budget_item_5" placeholder="Item 5" aria-label="Budget item 5"></td>
+                    <td><input class="form-control gr-qty" type="number" min="0" step="1" name="budget_qty_5" placeholder="Qty" aria-label="Quantity for item 5"></td>
+                    <td><input class="form-control gr-cost" type="number" min="0" step="1" name="budget_unit_cost_5" placeholder="Unit cost (₦)" aria-label="Unit cost for item 5"></td>
+                    <td class="gr-amount" data-amount>₦0</td>
+                  </tr>
+                  <tr>
+                    <td><input class="form-control" type="text" name="budget_item_6" placeholder="Item 6" aria-label="Budget item 6"></td>
+                    <td><input class="form-control gr-qty" type="number" min="0" step="1" name="budget_qty_6" placeholder="Qty" aria-label="Quantity for item 6"></td>
+                    <td><input class="form-control gr-cost" type="number" min="0" step="1" name="budget_unit_cost_6" placeholder="Unit cost (₦)" aria-label="Unit cost for item 6"></td>
+                    <td class="gr-amount" data-amount>₦0</td>
+                  </tr>
+                  <tr>
+                    <td><input class="form-control" type="text" name="budget_item_7" placeholder="Item 7" aria-label="Budget item 7"></td>
+                    <td><input class="form-control gr-qty" type="number" min="0" step="1" name="budget_qty_7" placeholder="Qty" aria-label="Quantity for item 7"></td>
+                    <td><input class="form-control gr-cost" type="number" min="0" step="1" name="budget_unit_cost_7" placeholder="Unit cost (₦)" aria-label="Unit cost for item 7"></td>
+                    <td class="gr-amount" data-amount>₦0</td>
+                  </tr>
+                  <tr>
+                    <td><input class="form-control" type="text" name="budget_item_8" placeholder="Item 8" aria-label="Budget item 8"></td>
+                    <td><input class="form-control gr-qty" type="number" min="0" step="1" name="budget_qty_8" placeholder="Qty" aria-label="Quantity for item 8"></td>
+                    <td><input class="form-control gr-cost" type="number" min="0" step="1" name="budget_unit_cost_8" placeholder="Unit cost (₦)" aria-label="Unit cost for item 8"></td>
+                    <td class="gr-amount" data-amount>₦0</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="gr-total" id="gr-total"><span>TOTAL <span class="gr-total__note" id="gr-total-note"></span></span><span id="gr-total-amount">₦0</span></div>
+              <input type="hidden" name="budget_total" id="f-budget_total" value="0">
+            </fieldset>
+
+            <fieldset class="gr-fieldset">
+              <legend><span class="gr-step">8</span>Follow-up and documentation</legend>
+              <p class="gr-hint">If funded, your chapter will be required to:</p>
+              <ul class="gr-list">
+                <li>Submit a brief event report.</li>
+                <li>Provide photographs and attendance records.</li>
+                <li>Document participant feedback and key outcomes.</li>
+                <li>Record the number of young people reached.</li>
+                <li>Share event highlights through YNAN communication platforms.</li>
+              </ul>
+              <div class="gr-field mt-3">
+                <label class="gr-check"><input type="checkbox" name="follow_up_agreement" value="Agreed" required> <span>Our chapter agrees to complete all follow-up and documentation requirements above. <span class="req">*</span></span></label>
+              </div>
+            </fieldset>
+
+            <fieldset class="gr-fieldset">
+              <legend><span class="gr-step">9</span>Contact information</legend>
+              <p class="gr-hint">The person we should contact about this application.</p>
+              <div class="row">
+                <div class="col-md-6">
+              <div class="gr-field">
+                  <label class="gr-label" for="f-contact_name">Full name <span class="req">*</span></label>
+                  <input class="form-control" type="text" id="f-contact_name" name="contact_name" required>
+                </div>
+                </div>
+                <div class="col-md-6">
+              <div class="gr-field">
+                  <label class="gr-label" for="f-contact_role">Position in chapter <span class="req">*</span></label>
+                  <input class="form-control" type="text" id="f-contact_role" name="contact_role" required>
+                </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+              <div class="gr-field">
+                  <label class="gr-label" for="f-contact_email">Email <span class="req">*</span></label>
+                  <input class="form-control" type="email" id="f-contact_email" name="contact_email" required>
+                </div>
+                </div>
+                <div class="col-md-6">
+              <div class="gr-field">
+                  <label class="gr-label" for="f-contact_phone">Phone number <span class="req">*</span></label>
+                  <input class="form-control" type="tel" id="f-contact_phone" name="contact_phone" required>
+                </div>
+                </div>
+              </div>
+              <div class="gr-field">
+                <label class="gr-label" for="f-attachment">Supporting document (optional)</label>
+                <div class="gr-hint mb-2">e.g. a full proposal, flyer or letter of support. PDF, Word or image, max 8 MB.</div>
+                <input class="form-control" type="file" id="f-attachment" name="attachment" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
+              </div>
+            </fieldset>
+            <div class="text-center mt-4">
+              <button type="submit" class="gr-submit">Submit application</button>
+              <p class="gr-hint mt-3 mb-0">Questions? Email <a href="mailto:nationalynanneuroscience@gmail.com">nationalynanneuroscience@gmail.com</a>.</p>
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer Area -->
+    <div class="footer-area footer-inner-1 position-relative bg-default-3">
+      <div class="container">
+        <footer class="footer-top">
+          <div class="row">
+            <div class="col-lg-3 col-md-7 col-xs-9">
+              <div class="footer-widgets footer-widgets--l7">
+                <!-- Brand Logo-->
+                <div class="brand-logo mt-1">
+                  <a href="#">
+                    <!-- light version logo (logo must be black)-->
+                    <img src="image/png/ynan.png" alt="" class="light-version-logo" style='height:70px;'>
+                    <!-- Dark version logo (logo must be White)-->
+                  
+                  </a>
+                </div>
+                <p class="footer-widgets__text mt-5">
+                  Empowering primary school, high school and<br class="d-none d-xl-block"> undergraduate students to pursue<br class="d-none d-xl-block"> careers in neuroscience.</p>
+                <ul class="footer-social-share footer-social-share--rounded mt-4">
+                  <li>
+                    <a href="https://web.facebook.com/youthneurong/" target="_blank" rel="noopener">
+                      <i class="fab fa-facebook-square"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.instagram.com/ynan_001" target="_blank" rel="noopener">
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.linkedin.com/in/youthneuroscienceassociationofnigeria" target="_blank" rel="noopener">
+                      <i class="fab fa-linkedin"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-9">
+              <div class="row">
+                <div class="col-md-4 col-xs-6">
+                  <div class="footer-widgets footer-widgets--l7">
+                    <h4 class="footer-widgets__title">Contact Details</h4>
+                    <ul class="footer-widgets__list footer-widgets--address">
+                      <li>
+                        <i class="fa fa-globe text-electric-violet-2"></i>
+                        <span>Website: <br class="d-block">
+                          <a href="https://ynan.org.ng">ynan.org.ng</a></span>
+                      </li>
+                      <li>
+                        <i class="fab fa-linkedin text-electric-violet-2"></i>
+                        <div class="list-content">
+                          <span class="d-block gr-text-hover-decoration-none"> LinkedIn: </span>
+                          <a href="https://www.linkedin.com/in/youthneuroscienceassociationofnigeria" target="_blank" rel="noopener">Youth Neuroscience Association of Nigeria</a>
+                        </div>
+                      </li>
+                      <li>
+                        <i class="fa fa-envelope text-electric-violet-2"></i>
+                        <a class="heading-default-color gr-text-hover-underline text-break" href="mailto:nationalynanneuroscience@gmail.com">
+                          <span class="d-block gr-text-hover-decoration-none"> Email:
+                                            </span>nationalynanneuroscience@gmail.com</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-4 col-xs-6">
+                  <div class="footer-widgets footer-widgets--l7 mb-10 mb-md-0">
+                    <h4 class="footer-widgets__title">YNAN</h4>
+                    <ul class="footer-widgets__list">
+                      <li>
+                        <a href="about-us.html">About us</a>
+                      </li>
+                      <li>
+                        <a href="handbook.html">Handbook & Guidelines</a>
+                      </li>
+   
+                      <li>
+                        <a href="contact-1.html">Contact</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-4 col-xs-9">
+                  <div class="footer-widgets footer-widgets--l7">
+                    <h4 class="footer-widgets__title">Join the Community</h4>
+                    <p class="footer-widgets__text mb-4 mt-0">Chat with YNAN members and get news, events and opportunities.</p>
+                    <a class="btn btn-primary shadow--primary-4 text-white rounded-50" href="https://chat.whatsapp.com/L41TmlycZkFGH2Kjyl6I0a" target="_blank" rel="noopener">WhatsApp Group</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <div class="copyright text-center border-top border-default-color-3">
+
+        </div>
+      </div>
+    </div>
+    <!--/ .Footer Area -->
+  </div>
+  <!-- Plugin's Scripts -->
+  <script src="plugins/jquery/jquery.min.js"></script>
+  <script src="plugins/jquery/jquery-migrate.min.js"></script>
+  <script src="js/bootstrap.bundle.js"></script>
+  <script src="plugins/fancybox/jquery.fancybox.min.js"></script>
+  <script src="plugins/nice-select/jquery.nice-select.min.js"></script>
+  <script src="plugins/aos/aos.min.js"></script>
+  <script src="plugins/counter-up/jquery.counterup.min.js"></script>
+  <script src="plugins/counter-up/waypoints.min.js"></script>
+  <script src="plugins/slick/slick.min.js"></script>
+  <script src="plugins/skill-bar/skill.bars.jquery.js"></script>
+  <script src="plugins/isotope/isotope.pkgd.min.js"></script>
+  <!--<script src="./plugins/theme-mode-switcher/gr-theme-mode-switcher.js"></script>-->
+  <!-- Activation Script -->
+  <script src="js/menu.js"></script>
+  <script src="js/custom.js"></script>
+  <script>
+    (function () {
+      var LIMIT = 50000, form = document.querySelector('form[name="outreach-grant"]');
+      if (!form) return;
+      var fmt = function (n) { return '₦' + n.toLocaleString('en-NG'); };
+      function recalc() {
+        var total = 0;
+        form.querySelectorAll('.gr-budget tbody tr').forEach(function (tr) {
+          var q = parseFloat(tr.querySelector('.gr-qty').value) || 0;
+          var c = parseFloat(tr.querySelector('.gr-cost').value) || 0;
+          tr.querySelector('[data-amount]').textContent = fmt(q * c);
+          total += q * c;
+        });
+        document.getElementById('gr-total-amount').textContent = fmt(total);
+        document.getElementById('f-budget_total').value = total;
+        var over = total > LIMIT;
+        document.getElementById('gr-total').classList.toggle('over', over);
+        document.getElementById('gr-total-note').textContent = over ? '(exceeds the ₦50,000 grant)' : '';
+        return total;
+      }
+      form.addEventListener('input', function (e) { if (e.target.closest('.gr-budget')) recalc(); });
+      form.addEventListener('submit', function (e) {
+        var file = form.querySelector('input[type=file]').files[0];
+        if (recalc() > LIMIT) { e.preventDefault(); alert('Your budget total is more than ₦50,000. Please adjust it before submitting.'); document.getElementById('gr-total').scrollIntoView({ block: 'center' }); }
+        else if (file && file.size > 8 * 1024 * 1024) { e.preventDefault(); alert('The supporting document is larger than 8 MB. Please upload a smaller file.'); }
+      });
+    })();
+  </script>
+</body>
+
+
+</html>

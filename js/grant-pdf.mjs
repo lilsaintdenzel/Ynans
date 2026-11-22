@@ -1,10 +1,5 @@
-// Builds an A4 PDF of an Outreach Grant application with pdf-lib.
-import { PDFDocument, StandardFonts, rgb } from "pdf-lib";
-
-const GREEN = rgb(0, 0.42, 0.16);
-const DARK = rgb(0.13, 0.15, 0.17);
-const MUTED = rgb(0.42, 0.45, 0.5);
-const LINE = rgb(0.85, 0.87, 0.9);
+// Builds an A4 PDF of an Outreach Grant application in the browser.
+// Needs pdf-lib (js/vendor/pdf-lib-1.17.1.min.js), passed in as `lib`.
 const A4 = [595.28, 841.89];
 const M = 50; // page margin
 
@@ -21,7 +16,9 @@ const SECTIONS = [
   ["9. Contact information", [["Full name", "contact_name"], ["Position in chapter", "contact_role"], ["Email", "contact_email"], ["Phone number", "contact_phone"], ["Supporting document", "attachment"]]],
 ];
 
-export async function buildGrantPdf(payload, { logo } = {}) {
+export async function buildGrantPdf(payload, { logo, lib } = {}) {
+  const { PDFDocument, StandardFonts, rgb } = lib;
+  const GREEN = rgb(0, 0.42, 0.16), DARK = rgb(0.13, 0.15, 0.17), MUTED = rgb(0.42, 0.45, 0.5), LINE = rgb(0.85, 0.87, 0.9);
   const d = payload.data || {};
   const doc = await PDFDocument.create();
   doc.setTitle(`YNAN Outreach Grant Application - ${text(d.chapter)}`);
@@ -76,6 +73,7 @@ export async function buildGrantPdf(payload, { logo } = {}) {
   }
 
   function budget() {
+    const RED = rgb(0.75, 0.22, 0.17);
     const cols = [M, M + 250, M + 320, M + 410]; // item, qty, unit cost, amount
     const right = A4[0] - M;
     const head = ["Costs and supplies", "Qty", "Unit cost", "Amount"];
@@ -103,7 +101,7 @@ export async function buildGrantPdf(payload, { logo } = {}) {
     y -= 6;
     const t = naira(total);
     page.drawText("TOTAL", { x: M, y: y - 12, size: 12, font: bold, color: DARK });
-    page.drawText(t, { x: right - bold.widthOfTextAtSize(t, 12), y: y - 12, size: 12, font: bold, color: total > 50000 ? rgb(0.75, 0.22, 0.17) : DARK });
+    page.drawText(t, { x: right - bold.widthOfTextAtSize(t, 12), y: y - 12, size: 12, font: bold, color: total > 50000 ? RED : DARK });
     y -= 24;
   }
 
@@ -119,7 +117,7 @@ export async function buildGrantPdf(payload, { logo } = {}) {
 function text(v, key) {
   if (v == null || v === "") return key ? "-" : "";
   if (Array.isArray(v)) return v.join(", ");
-  if (typeof v === "object") return v.filename ? `${v.filename} (attached to the email)` : JSON.stringify(v);
+  if (typeof v === "object") return v.name ? `${v.name} (attached to the email)` : "-";
   if (key === "follow_up_agreement") return v ? "Yes - the chapter agrees to complete all follow-up and documentation requirements." : "No";
   return String(v).trim() || (key ? "-" : "");
 }

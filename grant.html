@@ -204,9 +204,18 @@
               <p class="mt-3 mb-0" style="font-size:15px;opacity:.85;">Part of <a href="event.html#climate-brain" style="color:#ffd84d;font-weight:700;">Climate and the Brain Africa (CBA)</a>. Fields marked <span style="color:#ffd84d;">*</span> are required.</p>
             </div>
 
-            <form class="gr-form" name="outreach-grant" method="POST" action="/grant-thanks.html" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
-              <input type="hidden" name="form-name" value="outreach-grant">
-              <p class="gr-hidden"><label>Leave this empty: <input name="bot-field"></label></p>
+            <form class="gr-form" name="outreach-grant" method="POST" action="https://formsubmit.co/nationalynanneuroscience@gmail.com" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data">
+              <!-- Netlify Forms keeps a backup copy of each application -->
+              <input type="hidden" name="form-name" value="outreach-grant" data-netlify-only>
+              <p class="gr-hidden"><label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off" data-netlify-only></label></p>
+              <!-- FormSubmit emails the application, with the PDF attached, to YNAN -->
+              <input type="hidden" name="_subject" value="Outreach Grant Application">
+              <input type="hidden" name="_replyto" value="">
+              <input type="hidden" name="_next" value="https://ynan.org.ng/grant-thanks.html">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="false">
+              <p class="gr-hidden"><label>Leave this empty too: <input name="_honey" tabindex="-1" autocomplete="off"></label></p>
+              <input type="file" name="application_pdf" accept="application/pdf" hidden aria-hidden="true" tabindex="-1">
 
             <fieldset class="gr-fieldset">
               <legend><span class="gr-step">1</span>Event details</legend>
@@ -472,12 +481,13 @@
               </div>
               <div class="gr-field">
                 <label class="gr-label" for="f-attachment">Supporting document (optional)</label>
-                <div class="gr-hint mb-2">e.g. a full proposal, flyer or letter of support. PDF, Word or image, max 8 MB.</div>
+                <div class="gr-hint mb-2">e.g. a full proposal, flyer or letter of support. PDF, Word or image, max 5 MB.</div>
                 <input class="form-control" type="file" id="f-attachment" name="attachment" accept=".pdf,.doc,.docx,.jpg,.jpeg,.png">
               </div>
             </fieldset>
             <div class="text-center mt-4">
-              <button type="submit" class="gr-submit">Submit application</button>
+              <button type="submit" class="gr-submit" id="gr-submit">Submit application</button>
+              <p class="gr-hint mt-3 mb-0" id="gr-status" role="status" aria-live="polite"></p>
               <p class="gr-hint mt-3 mb-0">Questions? Email <a href="mailto:nationalynanneuroscience@gmail.com">nationalynanneuroscience@gmail.com</a>.</p>
             </div>
             </form>
@@ -621,10 +631,70 @@
         return total;
       }
       form.addEventListener('input', function (e) { if (e.target.closest('.gr-budget')) recalc(); });
-      form.addEventListener('submit', function (e) {
-        var file = form.querySelector('input[type=file]').files[0];
-        if (recalc() > LIMIT) { e.preventDefault(); alert('Your budget total is more than ₦50,000. Please adjust it before submitting.'); document.getElementById('gr-total').scrollIntoView({ block: 'center' }); }
-        else if (file && file.size > 8 * 1024 * 1024) { e.preventDefault(); alert('The supporting document is larger than 8 MB. Please upload a smaller file.'); }
+      var submitting = false;
+      var status = document.getElementById('gr-status'), btn = document.getElementById('gr-submit');
+      function loadPdfLib() {
+        if (window.PDFLib) return Promise.resolve(window.PDFLib);
+        return new Promise(function (ok, fail) {
+          var sc = document.createElement('script');
+          sc.src = 'js/vendor/pdf-lib-1.17.1.min.js';
+          sc.onload = function () { ok(window.PDFLib); };
+          sc.onerror = fail;
+          document.head.appendChild(sc);
+        });
+      }
+      function collect() {
+        var data = {};
+        new FormData(form).forEach(function (v, k) {
+          if (k.charAt(0) === '_' || k === 'form-name' || k === 'bot-field' || k === 'application_pdf') return;
+          var key = k.replace(/\[\]$/, '');
+          if (v instanceof File) { v = v.name ? { name: v.name } : null; }
+          if (key in data) data[key] = [].concat(data[key], v); else data[key] = k.slice(-2) === '[]' ? [v] : v;
+        });
+        return data;
+      }
+      async function attachPdf() {
+        var lib = await loadPdfLib();
+        var mod = await import('./js/grant-pdf.mjs');
+        var logo = null;
+        try { var r = await fetch('image/png/ynan.png'); if (r.ok) logo = new Uint8Array(await r.arrayBuffer()); } catch (err) {}
+        var data = collect();
+        var bytes = await mod.buildGrantPdf({ data: data, created_at: new Date().toISOString() }, { logo: logo, lib: lib });
+        var slug = String(data.chapter || 'chapter').replace(/\([^)]*\)/g, '').replace(/[^A-Za-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 50);
+        var file = new File([bytes], 'YNAN-Outreach-Grant-' + slug + '-' + new Date().toISOString().slice(0, 10) + '.pdf', { type: 'application/pdf' });
+        var dt = new DataTransfer(); dt.items.add(file);
+        form.querySelector('input[name="application_pdf"]').files = dt.files;
+      }
+      function backupToNetlify() {
+        if (!/^https?:$/.test(location.protocol)) return Promise.resolve();
+        var ctl = new AbortController(); setTimeout(function () { ctl.abort(); }, 8000);
+        return fetch('/', { method: 'POST', body: new FormData(form), signal: ctl.signal }).catch(function () {});
+      }
+      form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        if (submitting) return;
+        var file = form.querySelector('input[name="attachment"]').files[0];
+        if (recalc() > LIMIT) { alert('Your budget total is more than ₦50,000. Please adjust it before submitting.'); document.getElementById('gr-total').scrollIntoView({ block: 'center' }); return; }
+        if (file && file.size > 5 * 1024 * 1024) { alert('The supporting document is larger than 5 MB. Please upload a smaller file.'); return; }
+        submitting = true; btn.disabled = true; btn.textContent = 'Preparing your application…';
+        status.textContent = 'Creating the PDF of your application. Please keep this page open.';
+        form.querySelector('[name="_subject"]').value = 'Outreach Grant Application: ' + (form.chapter.value || 'Chapter') + ' – ' + (form.event_name.value || 'Outreach');
+        form.querySelector('[name="_replyto"]').value = form.contact_email.value;
+        if (/^https?:$/.test(location.protocol)) form.querySelector('[name="_next"]').value = location.origin + '/grant-thanks.html';
+        try { await attachPdf(); } catch (err) { console.error('PDF could not be created', err); }
+        btn.textContent = 'Sending…'; status.textContent = 'Sending your application…';
+        await backupToNetlify();
+        // Leave Netlify-only fields and empty budget rows out of the emailed copy.
+        form.querySelectorAll('[data-netlify-only]').forEach(function (el) { el.disabled = true; });
+        form.querySelectorAll('.gr-budget tbody tr').forEach(function (tr) {
+          var inputs = tr.querySelectorAll('input');
+          if ([].every.call(inputs, function (el) { return !el.value; })) inputs.forEach(function (el) { el.disabled = true; });
+        });
+        HTMLFormElement.prototype.submit.call(form);
+      });
+      window.addEventListener('pageshow', function () {
+        submitting = false; btn.disabled = false; btn.textContent = 'Submit application'; status.textContent = '';
+        form.querySelectorAll('input:disabled').forEach(function (el) { el.disabled = false; });
       });
     })();
   </script>

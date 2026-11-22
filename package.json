@@ -1,9 +1,0 @@
-{
-  "name": "ynan-website",
-  "private": true,
-  "description": "Youth Neuroscience Association of Nigeria website. Dependencies are for the Netlify Function that emails grant applications as PDFs.",
-  "dependencies": {
-    "nodemailer": "10.0.13",
-    "pdf-lib": "1.17.1"
-  }
-}

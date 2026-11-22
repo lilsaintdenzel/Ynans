@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>
-    Outreach Grant Application | Youth Neuroscience Association of Nigeria (YNAN)
+    2027 Brain Awareness Outreach Grant Application | Youth Neuroscience Association of Nigeria (YNAN)
   </title>
   <link rel="shortcut icon" href="image/png/favicon.png" type="image/x-icon">
   <!-- Bootstrap , fonts & icons  -->
@@ -173,8 +173,8 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-xl-8">
-            <h2 class="page-title-content__heading">Outreach Grant Application</h2>
-            <p class="page-title-content__text">YNAN Call for Outreach Grant: apply on behalf of your chapter to run a neuroclimate and brain health outreach.</p>
+            <h2 class="page-title-content__heading">2027 Brain Awareness Outreach Grant Application</h2>
+            <p class="page-title-content__text">YNAN Call for the 2027 Brain Awareness Outreach Grant: apply on behalf of your chapter to run a neuroclimate and brain health outreach.</p>
           </div>
         </div>
       </div>
@@ -205,7 +205,7 @@
               <input type="hidden" name="form-name" value="outreach-grant" data-netlify-only>
               <p class="gr-hidden"><label>Leave this empty: <input name="bot-field" tabindex="-1" autocomplete="off" data-netlify-only></label></p>
               <!-- FormSubmit emails the application, with the PDF attached, to YNAN -->
-              <input type="hidden" name="_subject" value="Outreach Grant Application">
+              <input type="hidden" name="_subject" value="2027 Brain Awareness Outreach Grant Application">
               <input type="hidden" name="_replyto" value="">
               <input type="hidden" name="_next" value="https://ynan.org.ng/grant-thanks.html">
               <input type="hidden" name="_template" value="table">
@@ -658,7 +658,7 @@
         var data = collect();
         var bytes = await mod.buildGrantPdf({ data: data, created_at: new Date().toISOString() }, { logo: logo, lib: lib });
         var slug = String(data.chapter || 'chapter').replace(/\([^)]*\)/g, '').replace(/[^A-Za-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 50);
-        var file = new File([bytes], 'YNAN-Outreach-Grant-' + slug + '-' + new Date().toISOString().slice(0, 10) + '.pdf', { type: 'application/pdf' });
+        var file = new File([bytes], 'YNAN-2027-Brain-Awareness-Outreach-Grant-' + slug + '-' + new Date().toISOString().slice(0, 10) + '.pdf', { type: 'application/pdf' });
         var dt = new DataTransfer(); dt.items.add(file);
         form.querySelector('input[name="application_pdf"]').files = dt.files;
       }
@@ -675,7 +675,7 @@
         if (file && file.size > 5 * 1024 * 1024) { alert('The supporting document is larger than 5 MB. Please upload a smaller file.'); return; }
         submitting = true; btn.disabled = true; btn.textContent = 'Preparing your application…';
         status.textContent = 'Creating the PDF of your application. Please keep this page open.';
-        form.querySelector('[name="_subject"]').value = 'Outreach Grant Application: ' + (form.chapter.value || 'Chapter') + ' – ' + (form.event_name.value || 'Outreach');
+        form.querySelector('[name="_subject"]').value = '2027 Brain Awareness Outreach Grant Application: ' + (form.chapter.value || 'Chapter') + ' – ' + (form.event_name.value || 'Outreach');
         form.querySelector('[name="_replyto"]').value = form.contact_email.value;
         if (/^https?:$/.test(location.protocol)) form.querySelector('[name="_next"]').value = location.origin + '/grant-thanks.html';
         try { await attachPdf(); } catch (err) { console.error('PDF could not be created', err); }

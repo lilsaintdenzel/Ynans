@@ -21,7 +21,7 @@ export async function buildGrantPdf(payload, { logo, lib } = {}) {
   const GREEN = rgb(0, 0.42, 0.16), DARK = rgb(0.13, 0.15, 0.17), MUTED = rgb(0.42, 0.45, 0.5), LINE = rgb(0.85, 0.87, 0.9);
   const d = payload.data || {};
   const doc = await PDFDocument.create();
-  doc.setTitle(`YNAN Outreach Grant Application - ${text(d.chapter)}`);
+  doc.setTitle(`YNAN 2027 Brain Awareness Outreach Grant Application - ${text(d.chapter)}`);
   doc.setAuthor("Youth Neuroscience Association of Nigeria");
   const font = await doc.embedFont(StandardFonts.Helvetica);
   const bold = await doc.embedFont(StandardFonts.HelveticaBold);
@@ -48,7 +48,9 @@ export async function buildGrantPdf(payload, { logo, lib } = {}) {
   }
   const tx = logoImg ? M + 70 : M;
   page.drawText("Youth Neuroscience Association of Nigeria (YNAN)", { x: tx, y: y - 16, size: 12, font: bold, color: GREEN });
-  page.drawText("Outreach Grant Application", { x: tx, y: y - 38, size: 20, font: bold, color: DARK });
+  const heading = "2027 Brain Awareness Outreach Grant Application";
+  const headingSize = Math.min(20, (A4[0] - M - tx) / bold.widthOfTextAtSize(heading, 1));
+  page.drawText(heading, { x: tx, y: y - 38, size: headingSize, font: bold, color: DARK });
   y -= 66;
   const submitted = payload.created_at ? new Date(payload.created_at) : new Date();
   write(`Theme: Neuroclimate and Brain Health for the Youth: Understanding How Climate Change Affects the Brain. Grant: NGN 50,000 per successful chapter.`, { size: 9.5, color: MUTED });
@@ -108,7 +110,7 @@ export async function buildGrantPdf(payload, { logo, lib } = {}) {
   // Footer with page numbers
   const pages = doc.getPages();
   pages.forEach((p, i) => {
-    const s = `YNAN Outreach Grant Application  |  ${safe(text(d.chapter))}  |  Page ${i + 1} of ${pages.length}`;
+    const s = `YNAN 2027 Brain Awareness Outreach Grant Application  |  ${safe(text(d.chapter))}  |  Page ${i + 1} of ${pages.length}`;
     p.drawText(s, { x: M, y: 26, size: 8, font, color: MUTED });
   });
   return doc.save();

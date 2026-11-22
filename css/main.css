@@ -16785,3 +16785,8 @@ mark[data-aos="highlight-text"].aos-animate {
 .bg-shark .footer-social-share.footer-social-share--rounded li a { background: #fff; color: #008000; }
 .bg-shark .footer-social-share.footer-social-share--rounded li a:hover,
 .bg-shark .footer-social-share.footer-social-share--rounded li a:focus-visible { background: #ffd84d; color: #13361f; }
+
+/* YNAN: keep inner page titles clear of the header logo on phones/tablets */
+@media (max-width: 991px) {
+  .page-title-content { padding-top: 110px; }
+}

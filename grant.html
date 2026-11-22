@@ -675,7 +675,7 @@
         if (file && file.size > 5 * 1024 * 1024) { alert('The supporting document is larger than 5 MB. Please upload a smaller file.'); return; }
         submitting = true; btn.disabled = true; btn.textContent = 'Preparing your application…';
         status.textContent = 'Creating the PDF of your application. Please keep this page open.';
-        form.querySelector('[name="_subject"]').value = '2027 Brain Awareness Outreach Grant Application: ' + (form.chapter.value || 'Chapter') + ' – ' + (form.event_name.value || 'Outreach');
+        form.querySelector('[name="_subject"]').value = '2027 Brain Awareness Outreach Grant Application: ' + (form.chapter.value || 'Chapter') + ', ' + (form.event_name.value || 'Outreach');
         form.querySelector('[name="_replyto"]').value = form.contact_email.value;
         if (/^https?:$/.test(location.protocol)) form.querySelector('[name="_next"]').value = location.origin + '/grant-thanks.html';
         try { await attachPdf(); } catch (err) { console.error('PDF could not be created', err); }

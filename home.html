@@ -43,6 +43,16 @@
     .cba .btn-cba { background: #ffd84d; color: #13361f; font-weight: 700; border-radius: 50px; padding: 12px 28px; }
     .cba .btn-cba:hover { background: #fff; color: #13361f; }
     @media (max-width: 575px) { .cba { padding: 60px 0 40px; } .cba__title { font-size: 32px; } }
+    .home-founders { padding: 80px 0 70px; background: #f4f5f7; }
+    .home-founders__eyebrow { color: #008000; font-weight: 700; font-size: 16px; }
+    .home-founders__title { font-size: clamp(28px, 4vw, 40px); font-weight: 800; }
+    .home-founder { display: flex; align-items: center; gap: 22px; background: #fff; border-radius: 16px; padding: 18px; box-shadow: 0 8px 28px rgba(15,23,42,.07); height: 100%; }
+    .home-founder img { width: 120px; height: 135px; object-fit: cover; border-radius: 12px; flex: none; }
+    .home-founder__name { font-size: 21px; font-weight: 800; margin-bottom: 2px; }
+    .home-founder__role { color: #008000; font-weight: 700; font-size: 14px; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 8px; }
+    .home-founder__note { font-size: 15px; line-height: 1.55; opacity: .75; margin: 0; }
+    .home-founders__link { font-weight: 700; color: #008000; text-decoration: underline; }
+    @media (max-width: 400px) { .home-founder img { width: 96px; height: 108px; } .home-founder { gap: 16px; } }
   </style>
 </head>
 
@@ -149,9 +159,6 @@
           <div class="welcome-image-group-wrapper">
             <div  class="welcome-image welcome-image--group-01">
               <img src="./image/home-1/Orish-1.png" alt="Dr. Chinna Orish, Founder of YNAN" class="welcome-image__single welcome-image--group-01__main" style="border-radius: 80px;" >
-              <div class="welcome-image__single welcome-image--group-01__img-1">
-                <img class="w-100" src="image/home-1/sammy.jpg" alt="Samuel George, Co-founder and pioneer National President of YNAN" style="border-radius: 50px;">
-              </div>
             
               <div class="welcome-image__single welcome-image--group-01__img-4">
                 <img class="w-100" src="image/home-1/hero-dots.png" alt="">
@@ -426,6 +433,42 @@
         </div>
       </div>
     </div>
+
+    <!-- Founders Area -->
+    <div class="home-founders">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h6 class="home-founders__eyebrow">Our Founders</h6>
+          <h2 class="home-founders__title">Founded on February 20, 2019</h2>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-5 col-md-6 mb-4">
+            <div class="home-founder">
+              <img src="image/ynan/founder-chinna-orish.jpg" alt="Dr. Chinna Orish" width="480" height="540" loading="lazy">
+              <div>
+                <h4 class="home-founder__name">Dr. Chinna Orish</h4>
+                <p class="home-founder__role">Founder</p>
+                <p class="home-founder__note">MBBS, PhD. Winner, 2026 SfN Science Education Award.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-5 col-md-6 mb-4">
+            <div class="home-founder">
+              <img src="image/ynan/founder-samuel-george.jpg" alt="Samuel George" width="480" height="540" loading="lazy">
+              <div>
+                <h4 class="home-founder__name">Samuel George</h4>
+                <p class="home-founder__role">Co-founder</p>
+                <p class="home-founder__note">Pioneer National President of YNAN.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-2">
+          <a class="home-founders__link" href="about-us.html#founders">Read our story</a>
+        </div>
+      </div>
+    </div>
+    <!--/ .Founders Area -->
 
 
 
